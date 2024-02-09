@@ -107,18 +107,18 @@ class _HomePageState extends State<HomePage> {
 
   Widget _buildBottomSheetContent(
       BuildContext context, bool isUpdate, DocumentSnapshot? documentSnapshot) {
-    // Declare TextEditingController for title and description
+    
     TextEditingController titleController = TextEditingController();
     TextEditingController descriptionController = TextEditingController();
 
-    // If updating, populate the text fields with existing values
+   
     if (isUpdate && documentSnapshot != null) {
       titleController.text = documentSnapshot['Title'];
       descriptionController.text = documentSnapshot['Description'];
     }
 
     return Padding(
-        padding: EdgeInsets.all(50.0),
+        padding: EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
@@ -231,7 +231,7 @@ class _HomePageState extends State<HomePage> {
                         'Description': descriptionValue
                       });
                     }
-
+        
                     Navigator.pop(context);
                   },
                   child: isUpdate
